@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import reactLogo from "./assets/react.svg";
 import "./App.css";
 import axios from "axios";
 
 function App() {
+  //state
   const [res, setRes] = useState([]);
+
   useEffect(() => {
     displayData();
   }, []);
@@ -13,7 +14,6 @@ function App() {
     const { data } = await axios.get(baseUrl);
     setRes(data);
   }
-  console.log(res);
   return (
     <div className="App">
       <h1>My Github Profile</h1>
